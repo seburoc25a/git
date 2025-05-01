@@ -1,4 +1,4 @@
-# AWSポリシー変更関連アクション一覧 (Markdown版) - 更新版
+# AWSポリシー変更関連アクション一覧 (Markdown版) - 最終更新版
 
 **注意:** このリストは主要なアクションを網羅するよう努めていますが、AWSサービスの進化により、新しいアクションが追加されたり、変更されたりする可能性があります。完全性を保証するものではないため、定期的な見直しや公式ドキュメントの確認をお勧めします。ここでいう「ポリシー」には、リソースポリシー、信頼ポリシー、インラインポリシー、アクセスポリシー、SCPなど、広義のアクセス制御設定を含みます。
 
@@ -159,17 +159,17 @@
 * `vpc-lattice:PutAuthPolicy`: サービスネットワークまたはサービスに認証ポリシーを設定します。
 * `vpc-lattice:DeleteAuthPolicy`: 認証ポリシーを削除します。
 
-## Entity Resolution (NEW)
+## Entity Resolution
 
 * `entityresolution:PutPolicy`: SchemaMapping または MatchingWorkflow にポリシーを設定または更新します。
 * `entityresolution:DeletePolicy`: SchemaMapping または MatchingWorkflow からポリシーを削除します。
 
-## Migration Hub Refactor Spaces (NEW)
+## Migration Hub Refactor Spaces
 
 * `refactorspaces:PutResourcePolicy`: 環境またはサービスにリソースポリシーを設定または更新します。
 * `refactorspaces:DeleteResourcePolicy`: 環境またはサービスからリソースポリシーを削除します。
 
-## Organizations (NEW - SCPs etc.)
+## Organizations
 
 * `organizations:CreatePolicy`: 組織ポリシー（SCPなど）を作成します。
 * `organizations:UpdatePolicy`: 組織ポリシーを更新します。
@@ -177,40 +177,45 @@
 * `organizations:AttachPolicy`: 組織ポリシーをOUやアカウントにアタッチします。
 * `organizations:DetachPolicy`: 組織ポリシーをOUやアカウントからデタッチします。
 
-## Serverless Application Repository (SAR) (NEW)
+## Serverless Application Repository (SAR)
 
 * `serverlessrepo:PutApplicationPolicy`: SAR アプリケーションにポリシーを設定または更新します。
 * `serverlessrepo:DeleteApplicationPolicy`: SAR アプリケーションからポリシーを削除します。
 
-## Signer (NEW)
+## Signer
 
 * `signer:PutSigningProfilePolicy`: 署名プロファイルにポリシーを設定または更新します。
 * `signer:DeleteSigningProfilePolicy`: 署名プロファイルからポリシーを削除します。
 
-## Systems Manager Incident Manager (NEW)
+## Systems Manager Incident Manager
 
 * `ssm-incidents:PutResourcePolicy`: レスポンスプランにリソースポリシーを設定または更新します。
 * `ssm-incidents:DeleteResourcePolicy`: レスポンスプランからリソースポリシーを削除します。
 
-## Kinesis Data Streams (NEW)
+## Kinesis Data Streams
 
 * `kinesis:PutResourcePolicy`: Kinesis データストリームにポリシーを設定または更新します。
 * `kinesis:DeleteResourcePolicy`: Kinesis データストリームからポリシーを削除します。
 
-## Redshift Serverless (NEW)
+## Redshift Serverless
 
 * `redshift-serverless:PutResourcePolicy`: Redshift Serverless 名前空間にポリシーを設定または更新します。
 * `redshift-serverless:DeleteResourcePolicy`: Redshift Serverless 名前空間からポリシーを削除します。
 
-## SES V2 (Simple Email Service) (NEW)
+## SES V2 (Simple Email Service)
 
 * `ses:PutEmailIdentityPolicy`: Eメールアイデンティティにポリシーを設定または更新します。
 * `ses:DeleteEmailIdentityPolicy`: Eメールアイデンティティからポリシーを削除します。
 * `ses:PutDomainIdentityPolicy`: ドメインアイデンティティにポリシーを設定または更新します。
 * `ses:DeleteDomainIdentityPolicy`: ドメインアイデンティティからポリシーを削除します。
 
-## Lex V2 (NEW - Covered in original list, added header for clarity)
+## Lex V2
 
 * `lex:CreateResourcePolicy`: ボットまたはボットエイリアスにリソースポリシーを作成します。
 * `lex:UpdateResourcePolicy`: ボットまたはボットエイリアスのリソースポリシーを更新します。
 * `lex:DeleteResourcePolicy`: ボットまたはボットエイリアスのリソースポリシーを削除します。
+
+## VPC (Virtual Private Cloud) (NEW Section)
+
+* `ec2:ModifyVpcEndpoint`: VPCエンドポイントの属性を変更します。**エンドポイントポリシーの更新、またはデフォルトポリシーへのリセット（実質的なカスタムポリシー削除）**はこのアクションに含まれます。
+* *(ec2:CreateVpcEndpoint): VPCエンドポイント作成時にポリシーをアタッチできる場合がありますが、更新アクションとしては上記が主です。*
