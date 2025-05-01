@@ -2,7 +2,7 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "DenyAllListedPolicyModificationActions",
+            "Sid": "DenyAllListedPolicyModificationActionsFinal",
             "Effect": "Deny",
             "Action": [
                 // IAM (Inline Policies & Trust Policy)
@@ -54,8 +54,8 @@
                 // OpenSearch Service
                 "es:UpdateDomainConfig",
                 "es:UpdateElasticsearchDomainConfig",
-                "es:CreateDomain", // Included as per user list
-                "es:CreateElasticsearchDomain", // Included as per user list
+                "es:CreateDomain",
+                "es:CreateElasticsearchDomain",
                 // EventBridge (Events & Schemas)
                 "events:PutPermission",
                 "events:RemovePermission",
@@ -72,12 +72,12 @@
                 "codeartifact:DeleteDomainPermissionsPolicy",
                 "codeartifact:DeleteRepositoryPermissionsPolicy",
                 // IoT
-                "iot:CreatePolicy", // Included as per user list
+                "iot:CreatePolicy",
                 "iot:CreatePolicyVersion",
                 "iot:SetPolicyAsActiveVersion",
                 "iot:DeletePolicy",
                 "iot:DeletePolicyVersion",
-                "iot:SetDefaultAuthorizer", // Included as per user list
+                "iot:SetDefaultAuthorizer",
                 // EFS
                 "elasticfilesystem:PutFileSystemPolicy",
                 "elasticfilesystem:DeleteFileSystemPolicy",
@@ -91,24 +91,24 @@
                 "mediastore:PutContainerPolicy",
                 "mediastore:DeleteContainerPolicy",
                 // RAM
-                "ram:CreateResourceShare", // Included as per user list
-                "ram:UpdateResourceShare", // Included as per user list
-                "ram:DeleteResourceShare", // Included as per user list
-                "ram:AssociateResourceShare", // Included as per user list
-                "ram:DisassociateResourceShare", // Included as per user list
-                "ram:AcceptResourceShareInvitation", // Included as per user list
-                "ram:RejectResourceShareInvitation", // Included as per user list
+                "ram:CreateResourceShare",
+                "ram:UpdateResourceShare",
+                "ram:DeleteResourceShare",
+                "ram:AssociateResourceShare",
+                "ram:DisassociateResourceShare",
+                "ram:AcceptResourceShareInvitation",
+                "ram:RejectResourceShareInvitation",
                 // Lake Formation
-                "lakeformation:GrantPermissions", // Included as per user list
-                "lakeformation:RevokePermissions", // Included as per user list
-                "lakeformation:BatchGrantPermissions", // Included as per user list
-                "lakeformation:BatchRevokePermissions", // Included as per user list
-                "lakeformation:PutDataLakeSettings", // Included as per user list
+                "lakeformation:GrantPermissions",
+                "lakeformation:RevokePermissions",
+                "lakeformation:BatchGrantPermissions",
+                "lakeformation:BatchRevokePermissions",
+                "lakeformation:PutDataLakeSettings",
                 // CodeBuild
                 "codebuild:PutResourcePolicy",
                 "codebuild:DeleteResourcePolicy",
                 // CloudFormation
-                "cloudformation:SetStackPolicy", // Included as per user list
+                "cloudformation:SetStackPolicy",
                 // ACM PCA
                 "acm-pca:PutPolicy",
                 "acm-pca:DeletePolicy",
@@ -122,11 +122,11 @@
                 "refactorspaces:PutResourcePolicy",
                 "refactorspaces:DeleteResourcePolicy",
                 // Organizations
-                "organizations:CreatePolicy", // Included as per user list
-                "organizations:UpdatePolicy", // Included as per user list
-                "organizations:DeletePolicy", // Included as per user list
-                "organizations:AttachPolicy", // Included as per user list
-                "organizations:DetachPolicy", // Included as per user list
+                "organizations:CreatePolicy",
+                "organizations:UpdatePolicy",
+                "organizations:DeletePolicy",
+                "organizations:AttachPolicy",
+                "organizations:DetachPolicy",
                 // Serverless Application Repository (SAR)
                 "serverlessrepo:PutApplicationPolicy",
                 "serverlessrepo:DeleteApplicationPolicy",
@@ -148,9 +148,11 @@
                 "ses:PutDomainIdentityPolicy",
                 "ses:DeleteDomainIdentityPolicy",
                 // Lex V2
-                "lex:CreateResourcePolicy", // Included based on updated list
-                "lex:UpdateResourcePolicy", // Included based on updated list
-                "lex:DeleteResourcePolicy"  // Included based on updated list
+                "lex:CreateResourcePolicy",
+                "lex:UpdateResourcePolicy",
+                "lex:DeleteResourcePolicy",
+                // VPC Endpoint Policy
+                "ec2:ModifyVpcEndpoint" // Includes updating and resetting policy
             ],
             "Resource": "*"
         }
