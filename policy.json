@@ -1,0 +1,158 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "DenyAllListedPolicyModificationActions",
+            "Effect": "Deny",
+            "Action": [
+                // IAM (Inline Policies & Trust Policy)
+                "iam:PutGroupPolicy",
+                "iam:PutRolePolicy",
+                "iam:PutUserPolicy",
+                "iam:DeleteGroupPolicy",
+                "iam:DeleteRolePolicy",
+                "iam:DeleteUserPolicy",
+                "iam:UpdateAssumeRolePolicy",
+                // S3
+                "s3:PutBucketPolicy",
+                "s3:DeleteBucketPolicy",
+                "s3:PutAccessPointPolicy",
+                "s3:DeleteAccessPointPolicy",
+                "s3:PutMultiRegionAccessPointPolicy",
+                "s3:DeleteMultiRegionAccessPointPolicy",
+                // S3 Outposts
+                "s3-outposts:PutEndpointPolicy",
+                "s3-outposts:DeleteEndpointPolicy",
+                // Secrets Manager
+                "secretsmanager:PutResourcePolicy",
+                "secretsmanager:DeleteResourcePolicy",
+                // KMS
+                "kms:PutKeyPolicy",
+                // Lambda
+                "lambda:AddPermission",
+                "lambda:RemovePermission",
+                "lambda:AddLayerVersionPermission",
+                "lambda:RemoveLayerVersionPermission",
+                // SQS
+                "sqs:SetQueueAttributes",
+                "sqs:AddPermission",
+                "sqs:RemovePermission",
+                // SNS
+                "sns:SetTopicAttributes",
+                "sns:AddPermission",
+                "sns:RemovePermission",
+                // ECR
+                "ecr:SetRepositoryPolicy",
+                "ecr:DeleteRepositoryPolicy",
+                // API Gateway (v1 & V2)
+                "apigateway:UpdateRestApi",
+                "apigateway:PutApiPolicy",
+                "apigateway:DeleteApiPolicy",
+                // CloudWatch Logs
+                "logs:PutResourcePolicy",
+                "logs:DeleteResourcePolicy",
+                // OpenSearch Service
+                "es:UpdateDomainConfig",
+                "es:UpdateElasticsearchDomainConfig",
+                "es:CreateDomain", // Included as per user list
+                "es:CreateElasticsearchDomain", // Included as per user list
+                // EventBridge (Events & Schemas)
+                "events:PutPermission",
+                "events:RemovePermission",
+                "events:PutResourcePolicy",
+                "events:DeleteResourcePolicy",
+                "schemas:PutResourcePolicy",
+                "schemas:DeleteResourcePolicy",
+                // Glacier
+                "glacier:SetVaultAccessPolicy",
+                "glacier:DeleteVaultAccessPolicy",
+                // CodeArtifact
+                "codeartifact:PutDomainPermissionsPolicy",
+                "codeartifact:PutRepositoryPermissionsPolicy",
+                "codeartifact:DeleteDomainPermissionsPolicy",
+                "codeartifact:DeleteRepositoryPermissionsPolicy",
+                // IoT
+                "iot:CreatePolicy", // Included as per user list
+                "iot:CreatePolicyVersion",
+                "iot:SetPolicyAsActiveVersion",
+                "iot:DeletePolicy",
+                "iot:DeletePolicyVersion",
+                "iot:SetDefaultAuthorizer", // Included as per user list
+                // EFS
+                "elasticfilesystem:PutFileSystemPolicy",
+                "elasticfilesystem:DeleteFileSystemPolicy",
+                // Backup
+                "backup:PutBackupVaultAccessPolicy",
+                "backup:DeleteBackupVaultAccessPolicy",
+                // Glue
+                "glue:PutResourcePolicy",
+                "glue:DeleteResourcePolicy",
+                // MediaStore
+                "mediastore:PutContainerPolicy",
+                "mediastore:DeleteContainerPolicy",
+                // RAM
+                "ram:CreateResourceShare", // Included as per user list
+                "ram:UpdateResourceShare", // Included as per user list
+                "ram:DeleteResourceShare", // Included as per user list
+                "ram:AssociateResourceShare", // Included as per user list
+                "ram:DisassociateResourceShare", // Included as per user list
+                "ram:AcceptResourceShareInvitation", // Included as per user list
+                "ram:RejectResourceShareInvitation", // Included as per user list
+                // Lake Formation
+                "lakeformation:GrantPermissions", // Included as per user list
+                "lakeformation:RevokePermissions", // Included as per user list
+                "lakeformation:BatchGrantPermissions", // Included as per user list
+                "lakeformation:BatchRevokePermissions", // Included as per user list
+                "lakeformation:PutDataLakeSettings", // Included as per user list
+                // CodeBuild
+                "codebuild:PutResourcePolicy",
+                "codebuild:DeleteResourcePolicy",
+                // CloudFormation
+                "cloudformation:SetStackPolicy", // Included as per user list
+                // ACM PCA
+                "acm-pca:PutPolicy",
+                "acm-pca:DeletePolicy",
+                // VPC Lattice
+                "vpc-lattice:PutAuthPolicy",
+                "vpc-lattice:DeleteAuthPolicy",
+                // Entity Resolution
+                "entityresolution:PutPolicy",
+                "entityresolution:DeletePolicy",
+                // Refactor Spaces
+                "refactorspaces:PutResourcePolicy",
+                "refactorspaces:DeleteResourcePolicy",
+                // Organizations
+                "organizations:CreatePolicy", // Included as per user list
+                "organizations:UpdatePolicy", // Included as per user list
+                "organizations:DeletePolicy", // Included as per user list
+                "organizations:AttachPolicy", // Included as per user list
+                "organizations:DetachPolicy", // Included as per user list
+                // Serverless Application Repository (SAR)
+                "serverlessrepo:PutApplicationPolicy",
+                "serverlessrepo:DeleteApplicationPolicy",
+                // Signer
+                "signer:PutSigningProfilePolicy",
+                "signer:DeleteSigningProfilePolicy",
+                // Systems Manager Incident Manager
+                "ssm-incidents:PutResourcePolicy",
+                "ssm-incidents:DeleteResourcePolicy",
+                // Kinesis Data Streams
+                "kinesis:PutResourcePolicy",
+                "kinesis:DeleteResourcePolicy",
+                // Redshift Serverless
+                "redshift-serverless:PutResourcePolicy",
+                "redshift-serverless:DeleteResourcePolicy",
+                // SES V2
+                "ses:PutEmailIdentityPolicy",
+                "ses:DeleteEmailIdentityPolicy",
+                "ses:PutDomainIdentityPolicy",
+                "ses:DeleteDomainIdentityPolicy",
+                // Lex V2
+                "lex:CreateResourcePolicy", // Included based on updated list
+                "lex:UpdateResourcePolicy", // Included based on updated list
+                "lex:DeleteResourcePolicy"  // Included based on updated list
+            ],
+            "Resource": "*"
+        }
+    ]
+}
